@@ -1,6 +1,9 @@
 package com.sayimfun.moredatasource.mapper.test2;
 
+import com.sayimfun.moredatasource.common.requestentity.QueryUser;
 import com.sayimfun.moredatasource.entity.User;
+
+import java.util.List;
 
 public interface Test2UserMapper {
 
@@ -15,4 +18,6 @@ public interface Test2UserMapper {
     int updateByPrimaryKeySelective(User record);
 
     int updateByPrimaryKey(User record);
+
+    List<User> listAllUser(QueryUser queryUser);
 }

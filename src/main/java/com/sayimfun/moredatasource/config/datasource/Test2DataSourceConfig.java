@@ -1,4 +1,4 @@
-package com.sayimfun.moredatasource.config;
+package com.sayimfun.moredatasource.config.datasource;
 
 import javax.sql.DataSource;
 
@@ -28,7 +28,7 @@ public class Test2DataSourceConfig {
      *@return DataSource
      */
     @Bean(name = "test2DataSource")
-    @ConfigurationProperties(prefix = "spring.datasource.db2")
+    @ConfigurationProperties(prefix = "spring.datasource.test2")
     public DataSource masterDataSource() {
         return DataSourceBuilder.create().build();
     }

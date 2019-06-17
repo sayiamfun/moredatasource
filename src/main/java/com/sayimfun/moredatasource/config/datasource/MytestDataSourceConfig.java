@@ -1,4 +1,4 @@
-package com.sayimfun.moredatasource.config;
+package com.sayimfun.moredatasource.config.datasource;
 
 
 import org.apache.ibatis.session.SqlSessionFactory;

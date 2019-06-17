@@ -16,14 +16,25 @@
     from t_user
     where userId = #{userid,jdbcType=INTEGER}
   </select>
+  <select id="listAllUser" resultMap="BaseResultMap" parameterType="com.sayimfun.moredatasource.common.requestentity.QueryUser">
+    SELECT
+    <include refid="Base_Column_List" />
+    FROM
+    t_user
+    <where>
+      1=1
+      <if test="userName != null and userName.length()>0">and userName like #{userName}</if>
+      <if test="phone != null and phone.length()>0"> and phone like #{phone}</if>
+    </where>
+  </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
     delete from t_user
     where userId = #{userid,jdbcType=INTEGER}
   </delete>
   <insert id="insert" parameterType="com.sayimfun.moredatasource.entity.User" >
-    insert into t_user (userId, userName, password, 
+    insert into t_user (userId, userName, password,
       phone)
-    values (#{userid,jdbcType=INTEGER}, #{username,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, 
+    values (#{userid,jdbcType=INTEGER}, #{username,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR},
       #{phone,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="com.sayimfun.moredatasource.entity.User" >

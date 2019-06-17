@@ -15,7 +15,10 @@
 
         <!--数据库链接URL，用户名、密码 -->
         <jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://localhost:3306/mytest?useSSL=false"
-                        userId="root" password="jiazhangjia217"> </jdbcConnection>
+                        userId="root" password="jiazhangjia217">
+            <!--开启读取数据库注释：为了把注释写到相对应的注解里面-->
+            <property name="remarksReporting" value="true"></property>
+        </jdbcConnection>
 
         <!--数据库链接URL，用户名、密码 -->
         <!--<jdbcConnection driverClass="oracle.jdbc.driver.OracleDriver"
@@ -35,7 +38,7 @@
         </javaModelGenerator>
 
         <!-- 生成映射文件的包名和位置 -->
-        <sqlMapGenerator targetPackage="mapper.db3"
+        <sqlMapGenerator targetPackage="mapper.mytest"
                          targetProject="src/main/resources">
             <property name="enableSubPackages" value="true"/>
         </sqlMapGenerator>
